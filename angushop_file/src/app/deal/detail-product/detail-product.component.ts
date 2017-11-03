@@ -54,8 +54,8 @@ export class DetailDealComponent implements OnInit {
                     id: product.id,
                     slug: product.slug,
                     quantity: 1,
-                    stock: product.stock,
-                    price: product.price,
+                    originalPrice: product.originalPrice,
+                    dealPrice: product.dealPrice,                    
                     image: product.image,
                     productName: product.productName
                 };

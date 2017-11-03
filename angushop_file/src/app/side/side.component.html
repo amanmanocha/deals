@@ -15,21 +15,9 @@
                     </a>
                 </li>
                 <li>
-                    <a mat-button routerLink="/shop/wishlist" routerLinkActive="active">
+                    <a mat-button routerLink="/wishlist" routerLinkActive="active">
                         <span *ngIf="wishlistLength != 0" class="badge">{{wishlistLength}}</span>
                         <mat-icon>&#xE87E;</mat-icon>
-                    </a>
-                </li>
-                <li>
-                    <a mat-button routerLink="/shop/compare" routerLinkActive="active">
-                        <span *ngIf="comapreLength != 0" class="badge">{{comapreLength}}</span>
-                        <mat-icon>&#xE6E1;</mat-icon>
-                    </a>
-                </li>
-                <li>
-                    <a mat-button routerLink="/shop/cart" routerLinkActive="active">
-                        <span *ngIf="cartLength != 0" class="badge">{{cartLength}}</span>
-                        <mat-icon>&#xE8CC;</mat-icon>
                     </a>
                 </li>
             </ul>

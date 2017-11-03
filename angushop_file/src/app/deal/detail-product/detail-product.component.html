@@ -34,7 +34,6 @@
                         </div>
                         <div class="col m6 s12">
                             <a class="link" (click)="addWishlist('wishlist',productWishlist)"><mat-icon>&#xE87E;</mat-icon> Add to Wishlist</a>
-                            <a class="link" (click)="addCompare('compare',productCompare)"><mat-icon>&#xE6E1;</mat-icon> Compare</a>
                         </div>
                     </div>
                 </div>
@@ -42,7 +41,7 @@
                     <mat-icon>&#xE8CC;</mat-icon>Add to cart({{procustCount}}) 
                 </button>
 
-                <table class="bordered">
+                <!-- <table class="bordered">
                     <tbody>
                         <tr>
                             <td>Stock</td>
@@ -57,18 +56,16 @@
                             <td>{{product.size}}</td>
                         </tr>
                     </tbody>
-                </table>
+                </table> -->
 
-                <h5>Description</h5>
                 <p class="margin-bottom10">{{product.description}}</p>
-                <p><rating [value]="product.rate"></rating></p>
                 
                 <!-- Tag -->
                 <mat-chip-list>
-                    <mat-chip>Angushop</mat-chip>
-                    <mat-chip>Shop</mat-chip>
-                    <mat-chip>Ecommerce</mat-chip>
-                    <mat-chip>Angular 2</mat-chip>
+                    <mat-chip>Galaxy S8</mat-chip>
+                    <mat-chip>Samsung</mat-chip>
+                    <mat-chip>Deals</mat-chip>
+                    <mat-chip>HDFC</mat-chip>
                 </mat-chip-list>
 
             </div>

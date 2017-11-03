@@ -4,13 +4,12 @@ export class Deal{
     productName: string;
     slug: string;
     description: string;
-    price: number;
+    originalPrice: number;
+    dealPrice: number;    
     image: string;
     category: string;
-    color: string;
-    size: number;
-    stock: number;
     wishlist: number;
+    card: string;
     gallery: [
         {
             id: number;

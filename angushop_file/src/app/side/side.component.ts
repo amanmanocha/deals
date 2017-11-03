@@ -49,7 +49,6 @@ export class SideComponent implements OnInit {
         }
     ];
     
-    private cartLength: number;
     private wishlistLength: number;
     private comapreLength: number;
 
@@ -62,9 +61,7 @@ export class SideComponent implements OnInit {
         setInterval(()=>{
             this.cookie.updateCookie();
             this.cookie.initCookie();
-            this.cartLength = this.cookie['productsOrder'].length;  
             this.wishlistLength = this.cookie['arrWishList'].length;  
-            this.comapreLength = this.cookie['arrCompare'].length;
         }, 1000);
     }
 

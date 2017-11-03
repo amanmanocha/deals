@@ -3,33 +3,32 @@
     "productName": "Galaxy S8", 
     "slug": "pri-ea-essent-everti", 
     "description": "Rs 4000 cashback for HDFC card holders.", 
-    "price": 51000, 
+    "originalPrice": 51000,
+    "dealPrice": 51000, 
     "image": "https://cnet1.cbsistatic.com/img/8A2v6HBrQ8dkYfiHVtL6Vl2tLxY=/770x433/2017/04/18/ca9d345f-d5db-4a89-8735-33174cb91a9b/fls8.jpg", 
     "category": "phones",
-    "color": "primary",
-    "size": 36,
-    "stock": 20,
     "index": 0,
     "height": 10,
     "width":5,
     "weight": 0.5,
     "sold": 230,
     "rate": 3,
+    "card": "HDFC",
     "gallery": [
         {
            "id": 1,
-           "thumbnail": "http://via.placeholder.com/640x500",
-           "images": "http://via.placeholder.com/640x500" 
+           "thumbnail": "https://cnet1.cbsistatic.com/img/8A2v6HBrQ8dkYfiHVtL6Vl2tLxY=/770x433/2017/04/18/ca9d345f-d5db-4a89-8735-33174cb91a9b/fls8.jpg",
+           "images": "https://cnet1.cbsistatic.com/img/8A2v6HBrQ8dkYfiHVtL6Vl2tLxY=/770x433/2017/04/18/ca9d345f-d5db-4a89-8735-33174cb91a9b/fls8.jpg" 
         },
         {
            "id": 2,
-           "thumbnail": "http://via.placeholder.com/250x195",
-           "images": "http://via.placeholder.com/640x500" 
+           "thumbnail": "http://www.samsung.com/global/galaxy/galaxy-s8/images/gallery/galaxy-s8-plus_gallery_front_black_s4.png",
+           "images": "http://www.samsung.com/global/galaxy/galaxy-s8/images/gallery/galaxy-s8-plus_gallery_front_black_s4.png" 
         },
         {
            "id": 3,
-           "thumbnail": "http://via.placeholder.com/250x195",
-           "images": "http://via.placeholder.com/640x500" 
+           "thumbnail": "http://www.samsung.com/global/galaxy/galaxy-s8/images/gallery/galaxy-s8-plus_gallery_front_black_s4.png",
+           "images": "http://www.samsung.com/global/galaxy/galaxy-s8/images/gallery/galaxy-s8-plus_gallery_front_black_s4.png" 
         }
     ]
 }]
