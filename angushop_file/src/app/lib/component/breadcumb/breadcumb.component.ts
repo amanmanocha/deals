@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import * as _ from "lodash";
 
 import { Deal } from '../../service/data/deal';
-import { productService } from '../../service/product.service';
+import { dealService } from '../../service/deal.service';
 
 @Component({
   selector: 'breadcumb',
@@ -17,7 +17,7 @@ export class BreadcumbComponent implements OnInit {
     constructor(
         private router: Router,
         private activeRoute: ActivatedRoute,
-        private productService: productService
+        private productService: dealService
     ){
         this.router.events.subscribe(evt => {
             this.createMap();

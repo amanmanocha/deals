@@ -12,7 +12,7 @@ import { Size } from './data/size';
 import { Color } from './data/color';
 
 @Injectable()
-export class productService {
+export class dealService {
     private base: string = './assets/json/';
 
     constructor(private http:Http){}

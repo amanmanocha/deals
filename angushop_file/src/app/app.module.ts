@@ -18,7 +18,7 @@ import { CallbackComponent } from './callback/callback.component';
 import { AppComponent } from './app.component';
 import { SideComponent } from './side/side.component';
 import { HomeModule } from './home/home.module';
-import { ProductModule } from './deal/deal.module';
+import { DealModule } from './deal/deal.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { contactModule } from './contact/contact.module';
 import { ElementModule } from './element/element.module';
@@ -56,7 +56,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     MatMenuModule,
     AppRoutingModule,
     HomeModule,
-    ProductModule,
+    DealModule,
     ElementModule,
     contactModule,
     SlimLoadingBarModule.forRoot()

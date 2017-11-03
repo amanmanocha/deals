@@ -10,7 +10,7 @@
     <div class="box-page padding-bottom20">
         <div class="wrap-product">
             <!-- App Product -->
-            <app-product 
+            <app-deal 
                 [filter]="{
                     index: productWishlist
                 }"
@@ -18,7 +18,7 @@
                 [setlimit]="8" 
                 [paginate]="true"
                 (onRemove)="onSelectRemove($event)"
-            ></app-product>
+            ></app-deal>
         </div>
     </div>
 </div>

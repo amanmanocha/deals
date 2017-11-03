@@ -7,14 +7,14 @@ import { Cookie } from 'ng2-cookies';
 import { MatSnackBar } from '@angular/material';
 
 import { Deal } from '../../lib/service/data/deal';
-import { productService } from '../../lib/service/product.service';
+import { dealService } from '../../lib/service/deal.service';
 
 @Component({
   selector: 'app-detail-product',
   templateUrl: './detail-product.component.html',
   styleUrls: ['./detail-product.component.scss']
 })
-export class DetailProductComponent implements OnInit {
+export class DetailDealComponent implements OnInit {
     private productName: string;
     private product: Deal;
     private cloneProduct: Deal[] = [];
@@ -31,7 +31,7 @@ export class DetailProductComponent implements OnInit {
 
     constructor(
         private activeRoute: ActivatedRoute,
-        private productService: productService,
+        private productService: dealService,
         public snackBar: MatSnackBar,
         private cookie: CookieService
     ){

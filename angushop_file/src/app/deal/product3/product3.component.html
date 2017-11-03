@@ -30,7 +30,7 @@
 
         <!-- Start Product -->
         <div class="wrap-product">
-            <app-product 
+            <app-deal 
                 [filter]="{
                     productName: search,
                     category: category,
@@ -43,7 +43,7 @@
                 [paginate]="true"
                 [currentPage]="currentPage"
                 (pageChange)="onPageChange($event)">
-            </app-product>
+            </app-deal>
         </div>
         <!-- End Product -->  
     </div>

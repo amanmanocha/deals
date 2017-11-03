@@ -16,13 +16,13 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { libHeightDirective } from './directive/lib-height.directive';
 
 // Service
-import { productService } from './service/product.service';
+import { dealService } from './service/deal.service';
 
 // Pipe
 import { productFilterPipe } from './pipe/filter-product';
 
 // Component
-import { ProductComponent } from './component/product/product.component';
+import { DealComponent } from './component/product/product.component';
 import { GridLogoComponent } from './component/grid-logo/grid-logo.component';
 import { LightboxComponent } from './component/lightbox/lightbox.component';
 import { BreadcumbComponent } from './component/breadcumb/breadcumb.component';
@@ -39,9 +39,9 @@ import { RatingComponent } from './component/rating/rating.component';
     NgxPaginationModule,
     RouterModule
   ],
-  providers: [productService],
+  providers: [dealService],
   declarations: [
-    ProductComponent,
+    DealComponent,
     libHeightDirective,
     GridLogoComponent,
     LightboxComponent,
@@ -50,7 +50,7 @@ import { RatingComponent } from './component/rating/rating.component';
     RatingComponent
   ],
   exports: [
-    ProductComponent,
+    DealComponent,
     GridLogoComponent,
     BreadcumbComponent,
     RatingComponent

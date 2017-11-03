@@ -22,23 +22,16 @@ import { CustomFormsModule } from 'ng2-validation';
 
 // Angushop Library module
 import { libModule } from '../lib/lib.module';
-import { productService } from '../lib/service/product.service';
+import { dealService } from '../lib/service/deal.service';
 import { MatchHeightDirective } from '../lib/directive/match-height.directive';
 
 // Product Component
 import { DashboardProdut } from './dashboard/dashboard.component';
-import { product1Component } from './product1/product1.component';
-import { DetailProductComponent } from './detail-product/detail-product.component';
-import { Product2Component } from './product2/product2.component';
+import { DetailDealComponent } from './detail-product/detail-product.component';
 import { Product3Component } from './product3/product3.component';
-import { Product4Component } from './product4/product4.component';
-import { Product5Component } from './product5/product5.component';
-import { CartComponent } from './cart/cart.component';
-import { ShippingComponent } from './shipping/shipping.component';
 import { ReceiptComponent } from './receipt/receipt.component';
 import { WishlistComponent } from './wishlist//wishlist.component';
 import { CookieService } from '../lib/service/cookie.service';
-import { CompareComponent } from './compare/compare.component';
 
 @NgModule({
     imports: [
@@ -61,21 +54,14 @@ import { CompareComponent } from './compare/compare.component';
     ],
     declarations: [ 
         DashboardProdut,
-        product1Component,
-        DetailProductComponent,
-        Product2Component,
+        DetailDealComponent,
         Product3Component,
-        CartComponent,
-        ShippingComponent,
-        Product4Component,
-        Product5Component,
         ReceiptComponent,
-        WishlistComponent,
-        CompareComponent
+        WishlistComponent
     ],
     providers: [CookieService],        
     exports: [ 
         DashboardProdut
     ]
 })
-export class ProductModule { }
+export class DealModule { }

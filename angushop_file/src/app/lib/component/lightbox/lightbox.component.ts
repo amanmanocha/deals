@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, HostList
 import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
 
 import { Deal } from '../../service/data/deal';
-import { productService } from '../../service/product.service';
+import { dealService } from '../../service/deal.service';
 
 @Component({
     selector: 'lightbox',
@@ -38,7 +38,7 @@ export class LightboxComponent {
     @ViewChild('contentwrap') content: ElementRef;
 
     constructor(
-        private mainService: productService
+        private mainService: dealService
     ){}
 
     private state: string = 'active';

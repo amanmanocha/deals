@@ -3,10 +3,10 @@ import { trigger, state, style, animate, transition, keyframes } from '@angular/
 import * as _ from "lodash";
 
 import { Deal } from '../../service/data/deal';
-import { productService } from '../../service/product.service';
+import { dealService } from '../../service/deal.service';
 
 @Component({
-    selector: 'app-product',
+    selector: 'app-deal',
     templateUrl: './product.component.html',
     styleUrls: ['./product.component.scss'],
     animations:[
@@ -30,7 +30,7 @@ import { productService } from '../../service/product.service';
         ])
     ]
 })
-export class ProductComponent implements OnInit {
+export class DealComponent implements OnInit {
     // Property
     private products : Deal[] = [];
     private productUpdated;
@@ -58,7 +58,7 @@ export class ProductComponent implements OnInit {
     @Output() onRemove = new EventEmitter;
     
     constructor(
-        private mainService: productService
+        private mainService: dealService
     ){}
 
     // Lifecycle

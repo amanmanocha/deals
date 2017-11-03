@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
 
 import { Logo } from '../../service/data/logo';
-import { productService } from '../../service/product.service';
+import { dealService } from '../../service/deal.service';
 
 @Component({
     selector: 'grid-logo',
@@ -23,7 +23,7 @@ export class GridLogoComponent implements OnInit {
     @Input() setlimit;
     
     constructor(
-        private mainService: productService
+        private mainService: dealService
     ){ }
 
     ngOnInit() {

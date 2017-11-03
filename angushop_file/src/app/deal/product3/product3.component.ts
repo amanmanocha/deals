@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationExtras } from "@angular/router";
 import * as _ from "lodash";
 
-import { productService } from '../../lib/service/product.service';
+import { dealService } from '../../lib/service/deal.service';
 import { Category } from '../../lib/service/data/category';
 import { Deal } from '../../lib/service/data/deal';
 
@@ -23,7 +23,7 @@ export class Product3Component implements OnInit {
     constructor(
         private router: Router,
         private activeRoute: ActivatedRoute,
-        private productService: productService
+        private productService: dealService
     ){
         this.activeRoute.queryParams.subscribe(params => {
             this.search = _.lowerCase(params["search"]);

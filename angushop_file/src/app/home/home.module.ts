@@ -6,8 +6,7 @@ import { RouterModule } from '@angular/router';
 
 // Component
 import { Home1Component } from './home1/home1.component';
-import { Home2Component } from './home2/home2.component';
-import { HomeslideDirective } from './home2/home-slide.directive';
+
 
 // Material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -34,10 +33,8 @@ import { libModule } from '../lib/lib.module';
     RouterModule
   ],
   declarations: [
-    Home1Component, 
-    Home2Component,
-    HomeslideDirective
+    Home1Component
   ],
-  exports: [Home1Component, Home2Component]
+  exports: [Home1Component]
 })
 export class HomeModule { }
