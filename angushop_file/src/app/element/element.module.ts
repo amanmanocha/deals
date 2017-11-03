@@ -26,7 +26,7 @@ import 'hammerjs';
 // Angushop Library module
 import { libModule } from '../lib/lib.module';
 
-import { ProductElement } from './product/product.component';
+import { DealElement } from './product/product.component';
 import { DashboardELementComponent } from './dashboard-element/dashboard-element.component';
 import { FormControlComponent } from './form-control/form-control.component';
 import { LayoutComponent } from './layout/layout.component';
@@ -61,7 +61,7 @@ import { HelperComponent } from './helper/helper.component';
         DashboardELementComponent
     ],
     declarations: [
-        ProductElement, 
+        DealElement, 
         DashboardELementComponent, 
         FormControlComponent, 
         LayoutComponent, 

@@ -6,7 +6,7 @@ import { productService } from '../../lib/service/product.service';
 import { Category } from '../../lib/service/data/category';
 import { Size } from '../../lib/service/data/size';
 import { Color } from '../../lib/service/data/color';
-import { Product } from '../../lib/service/data/product';
+import { Deal } from '../../lib/service/data/deal';
 
 @Component({
   selector: 'app-product2',

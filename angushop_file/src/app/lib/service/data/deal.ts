@@ -1,5 +1,5 @@
 
-export class Product{
+export class Deal{
     id: number;
     productName: string;
     slug: string;

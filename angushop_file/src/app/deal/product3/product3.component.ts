@@ -4,7 +4,7 @@ import * as _ from "lodash";
 
 import { productService } from '../../lib/service/product.service';
 import { Category } from '../../lib/service/data/category';
-import { Product } from '../../lib/service/data/product';
+import { Deal } from '../../lib/service/data/deal';
 
 @Component({
   selector: 'app-product3',

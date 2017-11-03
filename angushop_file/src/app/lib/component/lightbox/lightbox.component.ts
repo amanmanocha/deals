@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
 
-import { Product } from '../../service/data/product';
+import { Deal } from '../../service/data/deal';
 import { productService } from '../../service/product.service';
 
 @Component({
@@ -24,7 +24,7 @@ import { productService } from '../../service/product.service';
     ]
 })
 export class LightboxComponent {
-    private product : Product;
+    private product : Deal;
     private loadingState : boolean = true;
     private index : number;
 

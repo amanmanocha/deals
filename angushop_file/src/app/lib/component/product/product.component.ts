@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, 
 import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
 import * as _ from "lodash";
 
-import { Product } from '../../service/data/product';
+import { Deal } from '../../service/data/deal';
 import { productService } from '../../service/product.service';
 
 @Component({
@@ -32,9 +32,9 @@ import { productService } from '../../service/product.service';
 })
 export class ProductComponent implements OnInit {
     // Property
-    private products : Product[] = [];
+    private products : Deal[] = [];
     private productUpdated;
-    private selectProduct = Product;
+    private selectProduct = Deal;
     private limit: number;
     private togglezoom: boolean = false;
     private getId: number;
@@ -48,7 +48,7 @@ export class ProductComponent implements OnInit {
     @Input() setlimit: number;
     @Input() showBtnClose: boolean = false;
     @Input() paginate: boolean = false;
-    @Input() filter: Product;
+    @Input() filter: Deal;
     @Input() column: string = 'l3 s6';
     @Input() currentPage: number = 1;
 

@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 import * as _ from "lodash";
 
 // Object Type
-import { Product } from './data/product';
+import { Deal } from './data/deal';
 import { Logo } from './data/logo';
 import { Category } from './data/category';
 import { Size } from './data/size';
@@ -18,17 +18,17 @@ export class productService {
     constructor(private http:Http){}
 
     // Get Products 
-    getProduct(): Observable<Product[]>{
+    getProduct(): Observable<Deal[]>{
         return this.http.get(this.base + 'product.json').map((res:Response) => res.json());
     }
 
     // Get Product By Id
-    getIdProduct(id: number): Observable<Product>{
+    getIdProduct(id: number): Observable<Deal>{
         return this.getProduct().map(products => products.find(product => product.id === id));
     }
 
     // Get Product By Slug
-    getSlugProduct(slug: string): Observable<Product>{
+    getSlugProduct(slug: string): Observable<Deal>{
         return this.getProduct().map(products => products.find(product => product.slug === slug));
     }
 

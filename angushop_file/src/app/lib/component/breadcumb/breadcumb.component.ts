@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import * as _ from "lodash";
 
-import { Product } from '../../service/data/product';
+import { Deal } from '../../service/data/deal';
 import { productService } from '../../service/product.service';
 
 @Component({

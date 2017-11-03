@@ -1,28 +1,28 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Product } from '../service/data/product';
+import { Deal } from '../service/data/deal';
 
 @Pipe({
     name: 'productfilter',
     pure: false
 })
 export class productFilterPipe implements PipeTransform {
-  transform(items: Product[], filter: Product): Product[] {
+  transform(items: Deal[], filter: Deal): Deal[] {
     if (!items || !filter) {
       return items;
     }
     
     // filter items array, items which match and return true will be kept, false will be filtered out
-    return items.filter((item: Product) => this.applyFilter(item, filter));
+    return items.filter((item: Deal) => this.applyFilter(item, filter));
   }
   
   /**
    * Perform the filtering.
    * 
-   * @param {Product} product The product to compare to the filter.
-   * @param {Product} filter The filter to apply.
+   * @param {Deal} product The product to compare to the filter.
+   * @param {Deal} filter The filter to apply.
    * @return {boolean} True if product satisfies filters, false if not.
    */
-    applyFilter(product: Product, filter: Product): boolean {
+    applyFilter(product: Deal, filter: Deal): boolean {
       for (let field in filter) {
         if (filter[field]) {
 

@@ -6,7 +6,7 @@ import { CookieService } from '../../lib/service/cookie.service';
 import { Cookie } from 'ng2-cookies';
 import { MatSnackBar } from '@angular/material';
 
-import { Product } from '../../lib/service/data/product';
+import { Deal } from '../../lib/service/data/deal';
 import { productService } from '../../lib/service/product.service';
 
 @Component({
@@ -16,8 +16,8 @@ import { productService } from '../../lib/service/product.service';
 })
 export class DetailProductComponent implements OnInit {
     private productName: string;
-    private product: Product;
-    private cloneProduct: Product[] = [];
+    private product: Deal;
+    private cloneProduct: Deal[] = [];
     private productImage: string;
     private selectedImage: any;
     private objectOrder: any;

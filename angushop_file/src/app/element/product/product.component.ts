@@ -3,11 +3,11 @@ import { Router, NavigationExtras } from "@angular/router";
 import * as _ from "lodash";
 
 @Component({
-    selector: 'product-element',
-    templateUrl: './product.component.html',
-    styleUrls: ['./product.component.scss']
+    selector: 'deal-element',
+    templateUrl: './deal.component.html',
+    styleUrls: ['./deal.component.scss']
 })
-export class ProductElement {
+export class DealElement {
     private objectNavigation = {};
 
     constructor(
