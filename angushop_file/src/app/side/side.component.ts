@@ -49,7 +49,6 @@ export class SideComponent implements OnInit {
         }
     ];
     
-    private wishlistLength: number;
     private comapreLength: number;
 
     @ViewChild('navmenu') nav:ElementRef;        
@@ -61,7 +60,6 @@ export class SideComponent implements OnInit {
         setInterval(()=>{
             this.cookie.updateCookie();
             this.cookie.initCookie();
-            this.wishlistLength = this.cookie['arrWishList'].length;  
         }, 1000);
     }
 

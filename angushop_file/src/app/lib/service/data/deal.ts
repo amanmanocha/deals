@@ -8,7 +8,6 @@ export class Deal{
     dealPrice: number;    
     image: string;
     category: string;
-    wishlist: number;
     card: string;
     gallery: [
         {

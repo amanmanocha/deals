@@ -5,7 +5,6 @@ import * as _ from "lodash";
 @Injectable()
 export class CookieService {
     private productsOrder = [];
-    private arrWishList = [];
     private arrCompare = [];
     private promo: number;
     private promoValue: number;
@@ -44,7 +43,6 @@ export class CookieService {
     initCookie(){
         if(!_.isEmpty(this.cookies)){
             this.productsOrder = [];
-            this.arrWishList = [];
             this.arrCompare = [];
 
             // Products
@@ -55,24 +53,6 @@ export class CookieService {
                 });
             }
             
-            // Wish List
-            if(this.cookies['wishlist'] != undefined){
-                _.uniq(this.cookies['wishlist']);
-                let wishList = JSON.parse(this.cookies['wishlist']);
-                _.map(wishList, (x)=>{
-                    this.arrWishList.push(x);
-                });
-            }
-
-            // Compare
-            if(this.cookies['compare'] != undefined){
-                _.uniq(this.cookies['compare']);
-                let compareList = JSON.parse(this.cookies['compare']);
-                _.map(compareList, (x)=>{
-                    this.arrCompare.push(x);
-                });
-            }
-
             // Promo
             if(this.cookies['promo'] != undefined){
                 this.promo = this.cookies['promo'];

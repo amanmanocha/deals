@@ -30,7 +30,6 @@ import { DashboardProdut } from './dashboard/dashboard.component';
 import { DetailDealComponent } from './detail-product/detail-product.component';
 import { Product3Component } from './product3/product3.component';
 import { ReceiptComponent } from './receipt/receipt.component';
-import { WishlistComponent } from './wishlist//wishlist.component';
 import { CookieService } from '../lib/service/cookie.service';
 
 @NgModule({
@@ -56,8 +55,7 @@ import { CookieService } from '../lib/service/cookie.service';
         DashboardProdut,
         DetailDealComponent,
         Product3Component,
-        ReceiptComponent,
-        WishlistComponent
+        ReceiptComponent
     ],
     providers: [CookieService],        
     exports: [ 

@@ -22,7 +22,6 @@ export class DetailDealComponent implements OnInit {
     private selectedImage: any;
     private objectOrder: any;
     private productsOrder = [];
-    private productWishlist = [];
     private productCompare = [];
     private procustCount: number = 0;
 
@@ -36,7 +35,6 @@ export class DetailDealComponent implements OnInit {
         private cookie: CookieService
     ){
         this.productsOrder = this.cookie['productsOrder'];
-        this.productWishlist = this.cookie['arrWishList'];
         this.productCompare = this.cookie['arrCompare'];
     }
 
@@ -90,32 +88,6 @@ export class DetailDealComponent implements OnInit {
         this.buttonCounter(this.product.id);
         this.cookie.addCookie(cName, JSON.stringify(cValue));
         this.openSnackBar(this.product.productName, 'Added to Cart');
-    }
-
-    // Add wishlist to cookie
-    addWishlist(cName, cValue){
-        let obj = _.find(this.productWishlist, (x)=>{
-            return x == this.product['index'];
-        });
-        if(obj == undefined){
-            this.productWishlist.push(this.product['index']);
-        }
-
-        this.cookie.addCookie(cName, JSON.stringify(cValue));
-        this.openSnackBar(this.product.productName, 'Added to Wishlist');
-    }
-
-    // Add Compare
-    addCompare(cName, cValue){
-        let obj = _.find(this.productCompare, (x)=>{
-            return x == this.product['index'];
-        });
-        if(obj == undefined){
-            this.productCompare.push(this.product['index']);
-        }
-
-        this.cookie.addCookie(cName, JSON.stringify(cValue));
-        this.openSnackBar(this.product.productName, 'Added to Compare');
     }
 
     // Snack Bar

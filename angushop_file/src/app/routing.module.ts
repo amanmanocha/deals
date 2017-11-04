@@ -9,8 +9,6 @@ import { DashboardProdut } from './deal/dashboard/dashboard.component';
 import { DetailDealComponent } from './deal/detail-product/detail-product.component';
 import { Product3Component } from './deal/product3/product3.component';
 import { ReceiptComponent } from './deal/receipt/receipt.component';
-import { WishlistComponent } from './deal/wishlist/wishlist.component';
-
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ContactComponent } from './contact/contact.component';
 
