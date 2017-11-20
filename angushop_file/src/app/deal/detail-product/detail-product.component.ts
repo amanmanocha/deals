@@ -8,15 +8,18 @@ import { MatSnackBar } from '@angular/material';
 
 import { Deal } from '../../lib/service/data/deal';
 import { dealService } from '../../lib/service/deal.service';
+import { Card } from 'app/lib/service/data/card';
+import { AuthService } from 'app/auth/auth.service';
 
 @Component({
-  selector: 'app-detail-product',
-  templateUrl: './detail-product.component.html',
-  styleUrls: ['./detail-product.component.scss']
+    selector: 'app-detail-product',
+    templateUrl: './detail-product.component.html',
+    styleUrls: ['./detail-product.component.scss']
 })
 export class DetailDealComponent implements OnInit {
     private productName: string;
     private product: Deal;
+    private cards: Card[] = [];
     private cloneProduct: Deal[] = [];
     private productImage: string;
     private selectedImage: any;
@@ -25,15 +28,18 @@ export class DetailDealComponent implements OnInit {
     private productCompare = [];
     private procustCount: number = 0;
 
+
     productState: boolean = false;
-    loadingState: boolean = true;    
+    loadingState: boolean = true;
 
     constructor(
         private activeRoute: ActivatedRoute,
         private productService: dealService,
         public snackBar: MatSnackBar,
-        private cookie: CookieService
-    ){
+        private cookie: CookieService,
+        private authService: AuthService,
+        private router: Router
+    ) {
         this.productsOrder = this.cookie['productsOrder'];
         this.productCompare = this.cookie['arrCompare'];
     }
@@ -44,61 +50,71 @@ export class DetailDealComponent implements OnInit {
             this.productService.getSlugProduct(this.productName).subscribe(product => {
                 this.product = product;
                 this.productState = true;
-                this.loadingState = false;
                 this.productImage = product.image;
+                this.productService.getCardsByType(this.product.card).subscribe(data => {
+                    this.cards = data;
 
-                // Set Object Order Product
-                this.objectOrder = {
-                    id: product.id,
-                    slug: product.slug,
-                    quantity: 1,
-                    originalPrice: product.originalPrice,
-                    dealPrice: product.dealPrice,                    
-                    image: product.image,
-                    productName: product.productName
-                };
 
-                // Init Demo Image
-                this.selectedImage = _.find(product.gallery, (o) => { 
-                    return o.images == product.image
-                });
+                    // Set Object Order Product
+                    this.objectOrder = {
+                        id: product.id,
+                        slug: product.slug,
+                        quantity: 1,
+                        originalPrice: product.originalPrice,
+                        dealPrice: product.dealPrice,
+                        image: product.image,
+                        productName: product.productName
+                    };
 
-                // Init Counter product button
-                this.buttonCounter(product.id);
+                    // Init Demo Image
+                    this.selectedImage = _.find(product.gallery, (o) => {
+                        return o.images == product.image
+                    });
+
+                    // Init Counter product button
+                    this.buttonCounter(product.id);
+
+                },
+
+                    error => {
+                        alert('Error' + error);
+                    });
+
             });
+
         });
+        setTimeout(() => {
+            this.loadingState = false;
+        }, 500);
     }
-    
+
     // Button Counter
-    buttonCounter(idProduct: number){
+    buttonCounter(idProduct: number) {
         var findObj = _.find(this.cookie['productsOrder'], ['id', idProduct]);
-        if(findObj != undefined){
-            this.procustCount = findObj.quantity;        
+        if (findObj != undefined) {
+            this.procustCount = findObj.quantity;
         }
     }
 
-    // Add Cart to Cookie
-    addCart(cName,cValue) {
-        let obj = _.find(this.productsOrder, ['id', this.product.id]);
-        if(obj == undefined){
-            this.productsOrder.push(this.objectOrder);
-        }else{
-            obj.quantity = obj.quantity + 1;             
+
+    postCard(type) {
+        localStorage.setItem('cardType', type);
+        if (!this.authService.isAuthenticated()) {
+            this.authService.login();
+        } else {
+            this.router.navigate(['save-card-confirmation']);
         }
-        this.buttonCounter(this.product.id);
-        this.cookie.addCookie(cName, JSON.stringify(cValue));
-        this.openSnackBar(this.product.productName, 'Added to Cart');
     }
 
     // Snack Bar
     openSnackBar(message: string, action: string) {
         this.snackBar.open(message, action, {
-          duration: 2000,
+            duration: 2000,
         });
     }
-    
+
     // Image Gallery
-    selectImage(gallery){
+    selectImage(gallery) {
         this.selectedImage = gallery;
         this.productImage = gallery.images;
     }

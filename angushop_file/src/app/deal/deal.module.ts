@@ -31,6 +31,7 @@ import { DetailDealComponent } from './detail-product/detail-product.component';
 import { Product3Component } from './product3/product3.component';
 import { ReceiptComponent } from './receipt/receipt.component';
 import { CookieService } from '../lib/service/cookie.service';
+import { SaveCardConfirmationComponent } from '../save-card-confirmation/save-card-confirmation.component';
 
 @NgModule({
     imports: [
@@ -55,7 +56,8 @@ import { CookieService } from '../lib/service/cookie.service';
         DashboardProdut,
         DetailDealComponent,
         Product3Component,
-        ReceiptComponent
+        ReceiptComponent,
+        SaveCardConfirmationComponent
     ],
     providers: [CookieService],        
     exports: [ 

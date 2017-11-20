@@ -5,17 +5,12 @@
             <div class="col l7 m12 content">
                 <h5 class="sub-title">Welcome to DealPelo</h5>
                 <h3 class="title">
-                    Share your credit/debit card to help other grab great deals. Make money in the process.  
+                    Share your credit/debit card to help others grab great deals. Make money in the process.  
                 </h3>
 			
                 <a mat-button *ngIf="!auth.isAuthenticated()" (click)="auth.login()" routerLink="/home" class="btn btn-default">Login</a>
 				<a mat-button *ngIf="auth.isAuthenticated()" (click)="auth.logout()" routerLink="/home" class="btn btn-default">Logout</a>
                 <a mat-button class="btn btn-primary" routerLink="/product3">Most Popular</a>
-            </div>
-            <div class="col l5 m12">
-                <div class="wrap-demo">
-                    <img src="http://via.placeholder.com/600x833" class="responsive-img" alt=""/>
-                </div>
             </div>
         </div>  
     </div>
@@ -31,7 +26,7 @@
                     <mat-icon class="bg">&#xE8CC;</mat-icon>
                     <h5 class="title">Grab Deals</h5>
                     <p>
-                        Tons of awesome deals here. DealBuddy helps you grab them!
+                        Awesome deals going around. DealBuddy helps you grab them!
                     </p>
                 </div>
             </div>

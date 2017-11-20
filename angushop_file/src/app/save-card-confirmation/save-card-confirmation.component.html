@@ -1,0 +1,24 @@
+<div *ngIf="auth.isAuthenticated()">
+
+  <!-- Head Section -->
+  <div class="head-section bg">
+    <div class="container">
+      <h4>Confirm
+        <span class="font-light"> Card </span>
+        Submission</h4>
+      <p>Dealpelo Product Detail</p>
+    </div>
+  </div>
+  <div class="container-page">
+      <div class="box-page">
+
+      By sharing your card you allow DealPelo users to contact you to help them grab great deals.
+ 
+      <div class="col m60 s12">
+          <button mat-button class="btn btn-primary" (click)="shareCard()">
+              <i class="material-icons">&#xE05C;</i> Share your card
+          </button>
+      </div>
+  </div>
+  </div>
+</div>

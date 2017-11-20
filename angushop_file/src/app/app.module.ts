@@ -21,6 +21,7 @@ import { HomeModule } from './home/home.module';
 import { DealModule } from './deal/deal.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { contactModule } from './contact/contact.module';
+
 import { ElementModule } from './element/element.module';
 import { AuthHttp, AuthConfig } from 'angular2-jwt';
 

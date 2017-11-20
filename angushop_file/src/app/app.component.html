@@ -1,5 +1,5 @@
 <!-- Start Wrap -->
-<div class="wrap" [class.on]="mainclass">
+<div ng-init="onLoad()" class="wrap" [class.on]="mainclass">
     <app-side (toggle)="mainclass = !mainclass"></app-side>
     <div class="main">
         <router-outlet></router-outlet>

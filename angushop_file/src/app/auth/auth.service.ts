@@ -7,6 +7,7 @@ import 'rxjs/add/operator/take';
 
 @Injectable()
 export class AuthService {
+  
 
   auth0 = new auth0.WebAuth({
     clientID: AUTH_CONFIG.clientID,
@@ -30,10 +31,9 @@ export class AuthService {
       if (authResult && authResult.accessToken && authResult.idToken) {
         window.location.hash = '';
         this.setSession(authResult);
-
-        this.router.navigate(['home']);
+        this.getProfile(function(){});        
+        
       } else if (err) {
-       alert('going home');
         this.router.navigate(['home']);
         console.log(err);
         alert(`Error: ${err.error}. Check the console for further details.`);
@@ -53,6 +53,7 @@ export class AuthService {
     this.auth0.client.userInfo(accessToken, (err, profile) => {
       if (profile) {
         self.userProfile = profile;
+        localStorage.setItem('email', profile.email);  
       }
       cb(err, profile);
     });
@@ -61,6 +62,7 @@ export class AuthService {
   private setSession(authResult): void {
     // Set the time that the access token will expire at
     const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
+    
     console.log(authResult.accessToken);
     console.log(expiresAt);
     localStorage.setItem('access_token', authResult.accessToken);
@@ -73,6 +75,7 @@ export class AuthService {
     localStorage.removeItem('access_token');
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');
+    localStorage.removeItem('email');
     // Go back to the home route
     this.router.navigate(['']);
   }

@@ -11,6 +11,7 @@ import { Product3Component } from './deal/product3/product3.component';
 import { ReceiptComponent } from './deal/receipt/receipt.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ContactComponent } from './contact/contact.component';
+import { SaveCardConfirmationComponent } from './save-card-confirmation/save-card-confirmation.component';
 
 // ELements
 import { DashboardELementComponent } from './element/dashboard-element/dashboard-element.component';
@@ -30,13 +31,6 @@ const routes: Routes = [
     { path: 'callback',  component: CallbackComponent },
     { path: 'product3', component: Product3Component },
     { path: 'p/:detail', component: DetailDealComponent },
-    // { path: 'shop',  component: DashboardProdut, 
-    //   children : [
-    //     { path: '', redirectTo: '/shop/product1', pathMatch: 'full'  },
-    //     { path: 'product3', component: Product3Component },
-    //     { path: 'p/:detail', component: DetailProductComponent }
-    //   ]  
-    // },
     { path: 'element',  component: DashboardELementComponent, 
       children : [
         { path: '', redirectTo: '/element/product', pathMatch: 'full'  },
@@ -50,7 +44,7 @@ const routes: Routes = [
       ]  
     },
     { path: 'contact',  component: ContactComponent },
-    
+    { path: 'save-card-confirmation',  component: SaveCardConfirmationComponent },
     { path: '404',  component: NotFoundComponent },
     { path: '**', redirectTo: '404' }
 ];

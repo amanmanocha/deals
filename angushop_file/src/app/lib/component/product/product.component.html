@@ -31,10 +31,10 @@
                 <h6 class="title truncate">{{product.productName}}</h6>
                 <p>{{product.category}}</p>
                 <rating [value]="product.rate"></rating>
-                <strong class="price">{{product.price | currency:'USD':'$'}}</strong>
+                <strong class="price">{{product.price | currency:'Rs':'$'}}</strong>
                 <div [@visibility]="selectProduct == product ? 'shown' : 'hidden'" class="overlay valign-wrapper">
                     <ul>
-                        <li><a mat-mini-fab (click)="viewProduct(product.id)"><mat-icon>&#xE8FF;</mat-icon></a></li>
+                        <!-- <li><a mat-mini-fab (click)="viewProduct(product.id)"><mat-icon>&#xE8FF;</mat-icon></a></li> -->
                         <li><a mat-mini-fab [routerLink]="'/p/' + product.slug"><mat-icon>&#xE157;</mat-icon></a></li>
                     </ul>
                 </div>     
