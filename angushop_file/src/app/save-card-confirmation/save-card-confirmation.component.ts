@@ -17,7 +17,6 @@ export class SaveCardConfirmationComponent implements OnInit {
 
   shareCard() {
     var card = new Card(localStorage.getItem('email'), 'NCR', localStorage.getItem('cardType'));
-    alert(card);
     localStorage.removeItem('cardType');
     this.dealService.postCard(card);
   }

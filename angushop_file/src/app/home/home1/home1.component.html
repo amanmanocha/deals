@@ -3,14 +3,14 @@
     <div class="container">
         <div class="row">
             <div class="col l7 m12 content">
-                <h5 class="sub-title">Welcome to DealPelo</h5>
-                <h3 class="title">
-                    Share your credit/debit card to help others grab great deals. Make money in the process.  
-                </h3>
+                <h5 class="sub-title">Proferz</h5>
+                <!--<h3 class="title">
+                    Share offers you have access to. Make money and FRIENDS in the process.  
+                </h3> -->
 			
                 <a mat-button *ngIf="!auth.isAuthenticated()" (click)="auth.login()" routerLink="/home" class="btn btn-default">Login</a>
 				<a mat-button *ngIf="auth.isAuthenticated()" (click)="auth.logout()" routerLink="/home" class="btn btn-default">Logout</a>
-                <a mat-button class="btn btn-primary" routerLink="/product3">Most Popular</a>
+                <a mat-button class="btn btn-primary" routerLink="/product3">Ongoing offers</a>
             </div>
         </div>  
     </div>
@@ -24,9 +24,9 @@
                 <div class="item-feature">
                     <mat-icon class="font-light">&#xE8CC;</mat-icon>
                     <mat-icon class="bg">&#xE8CC;</mat-icon>
-                    <h5 class="title">Grab Deals</h5>
+                    <h5 class="title">Grab Offers</h5>
                     <p>
-                        Awesome deals going around. DealBuddy helps you grab them!
+                        Awesome offers going around. Proferz helps you grab them!
                     </p>
                 </div>
             </div>
@@ -34,9 +34,9 @@
                 <div class="item-feature">
                     <mat-icon class="font-light">&#xE163;</mat-icon>
                     <mat-icon class="bg">&#xE163;</mat-icon>
-                    <h5 class="title">Free Delivery</h5>
+                    <h5 class="title">Win Win</h5>
                     <p>
-                        Ea vis vide choro, augue nonumy pericula cu vim, ei mea amet eros reque.
+                        Share offers you have access to. Keep a part of the offer to yourself.
                     </p>
                 </div>
             </div>
@@ -44,9 +44,9 @@
                 <div class="item-feature">
                     <mat-icon class="font-light">&#xE8D1;</mat-icon>
                     <mat-icon class="bg">&#xE8D1;</mat-icon>
-                    <h5 class="title">Big Store</h5>
+                    <h5 class="title">Make Friends</h5>
                     <p>
-                        Ea vis vide choro, augue nonumy pericula cu vim, ei mea amet eros reque.
+                        Shop together with Proferz users.
                     </p>
                 </div>
             </div>
@@ -57,9 +57,7 @@
 <!-- Head Section -->
 <div class="head-section">
     <div class="container">
-        <h4>LATEST PRODUCTS</h4>
-        <p>Delectus aliquando incorrupte ne sea qui cu iudicabit.</p>
-        <button mat-button routerLink="/shop" class="btn btn-default margin-bottom5">Shop Now</button>
+        <h4>Ongoing Offers</h4>
     </div>
 </div>
 <!-- End Section -->

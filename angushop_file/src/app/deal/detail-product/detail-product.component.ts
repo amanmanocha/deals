@@ -60,8 +60,8 @@ export class DetailDealComponent implements OnInit {
                         id: product.id,
                         slug: product.slug,
                         quantity: 1,
-                        originalPrice: product.originalPrice,
-                        dealPrice: product.dealPrice,
+                        linkTitle: product.linkTitle,
+                        offerUrl: product.offerUrl,
                         image: product.image,
                         productName: product.productName
                     };
@@ -100,9 +100,17 @@ export class DetailDealComponent implements OnInit {
     postCard(type) {
         localStorage.setItem('cardType', type);
         if (!this.authService.isAuthenticated()) {
-            this.authService.login();
+            this.openSnackBar("please login to continue", "");
         } else {
             this.router.navigate(['save-card-confirmation']);
+        }
+    }
+
+    notify(type) {
+        if (this.authService.isAuthenticated()) {
+            this.productService.notify(type, localStorage.getItem('email'));
+        } else {
+            this.openSnackBar("please login to continue", "");
         }
     }
 

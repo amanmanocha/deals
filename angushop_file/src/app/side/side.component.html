@@ -7,16 +7,21 @@
         </a>
     </div>
     <nav>
-        <div> 
+        <div>
             <ul>
                 <li>
-                    <a mat-button (click)="toggleBar()" [class.active]="activebar">
-                        <mat-icon>&#xE8FE;</mat-icon>
+                    <a mat-button routerLink="/home" routerLinkActive="active">
+                        <i class="material-icons">home</i>
                     </a>
                 </li>
                 <li>
                     <a mat-button routerLink="/product3" routerLinkActive="active">
-                        <i class="fa fa-handshake-o" aria-hidden="true"></i>                        
+                        <i class="fa fa-handshake-o" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a mat-button (click)="toggleBar()" [class.active]="activebar">
+                        <i class="material-icons">face</i>
                     </a>
                 </li>
             </ul>
@@ -28,15 +33,17 @@
 <div class="wrap-menu">
     <nav #navmenu>
         <ul class="menu">
-            <li *ngFor="let menu of menus">
+            <a *ngIf="!auth.isAuthenticated()" (click)="auth.login()" >Login</a>
+            <a *ngIf= "auth.isAuthenticated()" (click)="auth.logout()" >Logout</a>
+            
+                <!-- <a mat-button *ngIf="!auth.isAuthenticated()" (click)="auth.login()" routerLink="/home" class="btn btn-default">Login</a>
+				<a mat-button *ngIf="auth.isAuthenticated()" (click)="auth.logout()" routerLink="/home" class="btn btn-default">Logout</a> -->
+  
+            <!-- <li *ngFor="let menu of menus">
                 <a *ngIf="menu.children != null" (click)="selectMenu(menu)" [class.active]="menu == selectedMenu">{{menu.label}}</a>
                 <a *ngIf="menu.children == null" [routerLink]="menu.link" routerLinkActive="active">{{menu.label}}</a>
-                <ul class="drop-down" [@slideUp] *ngIf="menu == selectedMenu">
-                    <li *ngFor="let child of menu.children">
-                        <a [routerLink]="child.link" routerLinkActive="active">{{child.label}}</a>
-                    </li>
-                </ul>
-            </li>
+               
+            </li> -->
         </ul>
     </nav>
 </div>

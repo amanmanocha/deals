@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import * as _ from "lodash";
@@ -74,12 +74,29 @@ export class dealService {
             );
     }
 
+
+    notify(type: string, email: string) {
+        var headers = new Headers();
+        headers.append("email", email);
+
+        this.authHttp.post(`${this.API_URL}/offers/notify`, type, {headers: headers})
+            .subscribe(
+            data => {
+                this.openSnackBar(type, 'your request received');
+            },
+            error => {
+                alert('Error ' + error);
+            }
+            );
+    }
+
+
     getCards(): Observable<Card[]> {
         return this.http.get(`${this.API_URL}/cards`).map((res: Response) => res.json());
     }
 
     getCardsByType(type: string): Observable<Card[]> {
-        return this.http.get(`${this.API_URL}/cards?bank=` + type).map((res: Response) => {
+        return this.http.get(`${this.API_URL}/cards/search/findByBank?bank=` + type).map((res: Response) => {
             return res.json()._embedded.cards;
         });
     }

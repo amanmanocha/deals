@@ -4,8 +4,8 @@ export class Deal{
     productName: string;
     slug: string;
     description: string;
-    originalPrice: number;
-    dealPrice: number;    
+    linkTitle: string;
+    offerUrl: string;    
     image: string;
     category: string;
     card: string;

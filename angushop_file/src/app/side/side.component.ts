@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef, HostLis
 import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
 import { Router, NavigationEnd } from '@angular/router';
 import { CookieService } from '../lib/service/cookie.service';
+import { AuthService } from 'app/auth/auth.service';
 
 @Component({
     selector: 'app-side',
@@ -55,7 +56,8 @@ export class SideComponent implements OnInit {
     
     constructor(
         private router: Router,
-        private cookie: CookieService
+        private cookie: CookieService,
+        public auth: AuthService
     ){  
         setInterval(()=>{
             this.cookie.updateCookie();
@@ -64,6 +66,7 @@ export class SideComponent implements OnInit {
     }
 
     ngOnInit() {
+        console.log("onInit");
         this.router.events.subscribe((evt) => {
             if (!(evt instanceof NavigationEnd)) {
                 return;
@@ -94,7 +97,7 @@ export class SideComponent implements OnInit {
     @Output() toggle = new EventEmitter();
     
     // Toggle Bar
-    toggleBar(){
+    toggleBar() {
         this.toggle.emit();
         this.activebar = !this.activebar;
     }
