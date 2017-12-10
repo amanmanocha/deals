@@ -1,0 +1,72 @@
+<!-- Head Section -->
+<div class="head-section bg">
+    <div class="container">
+        <h4>Deal
+            <span class="font-light">Detail</span>
+        </h4>
+        <p>Dealpelo Deal Detail</p>
+    </div>
+</div>
+
+<!-- Loading -->
+<div class="valign-wrapper" *ngIf="loadingState">
+    <mat-spinner diameter="50" strokeWidth="5"></mat-spinner>
+</div>
+
+<div class="container-page" *ngIf="productState">
+    <div class="box-page">
+        <h3 class="title">{{product.productName}}</h3>
+
+        <div class="row">
+            <div class="col l7 s12">
+                <div class="wrap-image">
+                    <img [src]="productImage" class="img-detail" [alt]="product.productName" />
+                    <ul>
+                        <li *ngFor="let image of product.gallery" (click)="selectImage(image)" [class.active]="selectedImage === image">
+                            <img [src]="image.thumbnail" class="responsive-img" alt="" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col l5 s12">
+                <div class="price">
+                    <div class="row">
+                        <div class="col m6 s12">
+                        <a target="_blank" [href]="product.offerUrl">{{product.linkTitle}}</a>
+                        <p class="margin-bottom10">{{product.description}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="price">
+                    <div class="row">
+                        
+                        <div class="col m60 s12">
+                            <button mat-button class="btn btn-primary" (click)="notify(product.card)">
+                            <i class="fa fa-handshake-o" aria-hidden="true"></i> Connect with {{cards.length}} {{product.card}} cardholders   </button>
+                        </div>
+                        <div class="col m60 s12">
+                        </div>
+                        <div class="col m60 s12">
+                        </div>
+                        <div class="col m60 s12">
+                            <button mat-button class="btn btn-primary" (click)="postCard(product.card)" >
+                                <i class="material-icons">&#xE05C;</i> Share your card
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <!-- Tag -->
+                <mat-chip-list>
+                    <mat-chip>Galaxy S8</mat-chip>
+                    <mat-chip>Samsung</mat-chip>
+                    <mat-chip>Deals</mat-chip>
+                    <mat-chip>HDFC</mat-chip>
+                </mat-chip-list>
+
+            </div>
+        </div>
+    </div>
+</div>
