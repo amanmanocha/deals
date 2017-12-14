@@ -1,11 +1,11 @@
 {
-  "name": "Angushop",
+  "name": "Profferz",
   "version": "1.0.0",
   "license": "MIT",
   "author": {
-    "name": "danurstrap",
-    "email": "adamnurdin01@gmail.com",
-    "url": "http://danurstrap.com"
+    "name": "Aman",
+    "email": "amanmanocha@yahoo.com",
+    "url": "http://amanmanocha.github.com"
   },
   "scripts": {
     "ng": "ng",
