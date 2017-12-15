@@ -2,7 +2,7 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
-  - '4.2'
+  - 9.3.0
 
 addons:
 apt:
@@ -20,7 +20,7 @@ before_install:
 before_script:
 - npm install -g angular-cli
 - npm install -g karma
-- npm install
+- npm install --save @angular/material @angular/cdk
 - ng build
 
-script: karma start config/karma.conf.js --single-run
+#script: karma start karma.conf.js --single-run
