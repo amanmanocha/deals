@@ -20,7 +20,7 @@ before_install:
 before_script:
 - npm install -g angular-cli
 - npm install -g karma
-- npm install
+- npm install --save @angular/material @angular/cdk
 - ng build
 
 script: karma start config/karma.conf.js --single-run
