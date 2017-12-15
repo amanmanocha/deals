@@ -10,7 +10,8 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.png"
+        "favicon.png",
+        "_redirects"
       ],
       "index": "index.html",
       "main": "main.ts",
