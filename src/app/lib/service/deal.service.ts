@@ -18,7 +18,7 @@ import { Router } from '@angular/router';
 
 @Injectable()
 export class dealService {
-    API_URL = 'http://apidealpelo.burrow.io';
+    API_URL = 'https://apidealpelo.burrow.io';
     private base: string = './assets/json/';
 
     constructor(private router: Router, private http: Http, public auth: AuthService, public authHttp: AuthHttp,
