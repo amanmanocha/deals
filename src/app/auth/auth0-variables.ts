@@ -6,8 +6,8 @@ interface AuthConfig {
 }
 
 export const AUTH_CONFIG: AuthConfig = {
-  clientID: 'Au5Iz76MfyPlSTJPzlnc34Dl3zCejv0T',
-  domain: 'sharecard.auth0.com',
-  callbackURL: 'http://dealpelo.burrow.io/callback',
-  apiUrl: 'dealpelo.com'
+  clientID: '8tMXFImTa8n9Clm8tcimsIiL2QjD4FqD',
+  domain: 'profferz.auth0.com',
+  callbackURL: 'https://www.profferz.com/callback',
+  apiUrl: 'https://profferz.auth0.com/api/v2/'
 };
