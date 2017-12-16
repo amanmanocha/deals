@@ -5,10 +5,8 @@
 
 <!-- Start Row Product -->
 <div class="row row-clear row-product" 
-    *ngIf="productState" 
     libHeight="item-product" 
-    (mouseleave)="selectProduct = null" 
-    [class.blur]="blurproduct" #row>
+    #row>
     
     <div *ngFor="let product of products | 
         productfilter: filter | 
@@ -19,25 +17,12 @@
         let i=index;" 
         [@fade] 
         class="col {{column}}" 
-        [id]="product.id" 
-        (mouseenter)="onHover(product)">
+        [id]="product.id" >
 
         <div class="item-product">  
-            <a *ngIf="showBtnClose" mat-mini-fab class="close" (click)="selectClose(product)">
-                <mat-icon>&#xE5CD;</mat-icon>
-            </a>
             <img [src]="product.image" [alt]="product.productName"/>
             <div class="content">
-                <h6 class="title truncate">{{product.productName}}</h6>
-                <p>{{product.category}}</p>
-                <rating [value]="product.rate"></rating>
-                <strong class="price">{{product.price | currency:'Rs':'$'}}</strong>
-                <div [@visibility]="selectProduct == product ? 'shown' : 'hidden'" class="overlay valign-wrapper">
-                    <ul>
-                        <!-- <li><a mat-mini-fab (click)="viewProduct(product.id)"><mat-icon>&#xE8FF;</mat-icon></a></li> -->
-                        <li><a mat-mini-fab [routerLink]="'/p/' + product.slug"><mat-icon>&#xE157;</mat-icon></a></li>
-                    </ul>
-                </div>     
+                <a [routerLink]="'/p/' + product.slug">{{product.productName}}</a>
             </div>
         </div>
     </div>
