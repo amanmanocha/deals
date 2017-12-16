@@ -6,7 +6,7 @@ interface AuthConfig {
 }
 
 export const AUTH_CONFIG: AuthConfig = {
-  clientID: 'lbl0g3Q4My2EG53K4rZnUGKygA5PLKHr',
+  clientID: '8tMXFImTa8n9Clm8tcimsIiL2QjD4FqD',
   domain: 'profferz.auth0.com',
   callbackURL: 'https://www.profferz.com/callback',
   apiUrl: 'https://profferz.auth0.com/api/v2/'
