@@ -13,7 +13,7 @@ import { Card } from 'app/lib/service/data/card';
 })
 export class CardFormComponent {
 
-  API_URL = 'http://apidealpelo.burrow.io';
+  API_URL = 'https://profferz.burrow.io';
   message: string;
 
   constructor(private router: Router, public auth: AuthService, public http: Http, public authHttp: AuthHttp, private spinnerService: Ng4LoadingSpinnerService) { }
