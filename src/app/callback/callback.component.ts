@@ -8,17 +8,6 @@ import { Router, NavigationEnd } from '@angular/router';
 export class CallbackComponent implements OnInit {
 
   constructor(private router: Router) {
-    this.router.events
-      .filter(event => (event instanceof NavigationEnd))
-      .subscribe((routeData: any) => {
-        if (this.router.url.startsWith('/callback#')) {
-          if (localStorage.getItem('cardType') != null) {
-            this.router.navigate(['/save-card-confirmation']);
-          } else {
-            this.router.navigate(['/home']);
-          }
-        }
-      });
   }
 
   ngOnInit() {
